@@ -1,3 +1,16 @@
-# Task router
+# Task router, this is the simulator for forntend app
 
+### test call
+POST http://localhost:8000
+
+### read task api
 GET http://localhost:8000/api/v1/task
+
+### POST TASK
+POST http://localhost:8000/api/v1/task
+
+### UPDATE TASK
+PATCH http://localhost:8000/api/v1/task
+
+### DELETE TASK
+DELETE http://localhost:8000/api/v1/task
