@@ -8,9 +8,28 @@ GET http://localhost:8000/api/v1/task
 
 ### POST TASK
 POST http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "_id": "005",
+    "task": "mobling",
+    "hours": 13,
+    "type": "entry"
+}
 
 ### UPDATE TASK
 PATCH http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "_id": "004",
+    "type": "bad"
+}
 
 ### DELETE TASK
 DELETE http://localhost:8000/api/v1/task
+Content-Type: application/json
+
+{
+    "_id": "005"
+}
