@@ -1,4 +1,5 @@
 import express from 'express'
+import { createTask } from '../model/TaskModel';
 
 //set the express in the way that we can only fetch the http request
 let fakeDb = [
@@ -45,8 +46,8 @@ router.get("/", (req, res) =>{
     })
 })
 
-router.post("/", (req, res) =>{
-    fakeDb.push(req.body);
+router.post("/", async (req, res) =>{
+    const result = await createTask(req.body);
     res.json({
         status: "success",
         message: "Data been added sucessfully"
