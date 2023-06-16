@@ -1,5 +1,6 @@
 import express from "express";
 import router from "./src/router/taskRouter.js";
+import { mongoConnect } from "./src/config/mongoDb.js";
 
 //create an express variable
 const app = express();
@@ -7,6 +8,9 @@ const PORT = 8000;
 // console.log("What comes in express: ",app)
 
 //morgan is to keep the log of the activities, login purpose
+
+//connect mongodb
+mongoConnect();
 
 // middlewares
 app.use(express.json());
