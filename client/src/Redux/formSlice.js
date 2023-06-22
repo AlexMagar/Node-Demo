@@ -1,13 +1,14 @@
 import {createSlice} from "@reduxjs/toolkit"
 
+const initialState = {
+    dataList: [],
+}
 const formSlice = createSlice({
     name: 'form',
-    initialState : {
-        data:[]
-    },
+    initialState,
     reducers:{
         showForm: (state, action) => {
-            state.data = [...state.data, action.payload];
+            state.dataList = [...state.data, action.payload];
         }
     }
 
