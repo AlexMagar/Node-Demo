@@ -9,7 +9,6 @@ export const Display = () => {
         {
             dataList.map( (item) => (
             <li>{item}</li>
-
         ))
         }
         </ul>
