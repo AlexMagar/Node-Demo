@@ -4,19 +4,29 @@ import { showForm } from '../Redux/formSlice'
 
 export const Form = () => {
     const dispatch = useDispatch();
-    const [data, setData] = useState("");
+    const [data, setData] = useState({});
+
+
     const handleOnChange = (e) =>{
-        const {value} = e.target;
-        setData(value);
+        const {name, value} = e.target;
+        console.log(name, value)
+        setData({
+            ...data,
+            [name]: value,
+        })
     }
+
+
     const handleOnSubmit = (e) =>{
         e.preventDefault();
         dispatch(showForm(data));
     }
+
   return (
     <div>
-        <form action='' onSubmit={handleOnSubmit}>
-            <input type='text' name='text' onChange={handleOnChange}/>
+        <form onSubmit={handleOnSubmit}>
+            <input type='text' name='task' onChange={handleOnChange} required/>
+            <input type='number' name='hr' onChange={handleOnChange} required/>
             <button>Submit</button>
         </form>
         {/* <Display data={data}/> */}
