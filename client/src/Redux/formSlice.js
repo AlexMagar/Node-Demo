@@ -8,10 +8,9 @@ const formSlice = createSlice({
     initialState,
     reducers:{
         showForm: (state, action) => {
-            state.dataList = [...state.data, action.payload];
+            state.dataList = [...state.dataList, action.payload];
         }
     }
-
 })
 
 const {reducer, actions} = formSlice;
