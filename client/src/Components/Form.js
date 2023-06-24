@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch} from 'react-redux'
 import { showForm } from '../Redux/formSlice'
+import {Typewriter} from 'react-simple-typewriter'
 
 export const Form = () => {
     const dispatch = useDispatch();
@@ -16,7 +17,6 @@ export const Form = () => {
         })
     }
 
-
     const handleOnSubmit = (e) =>{
         e.preventDefault();
         dispatch(showForm(data));
@@ -29,6 +29,18 @@ export const Form = () => {
             <input type='number' name='hr' onChange={handleOnChange} required/>
             <button>Submit</button>
         </form>
+        <h1>Example of fruits: <span>
+        <Typewriter 
+        words={['Apple', 'Banana', 'Mango', 'Graps']}
+        loop='false'
+        cursor
+        cursorStyle="|"
+        typeSpeed={70}
+        deleteSpeed={50}
+        delaySpeed={1000}
+        />
+        </span> 
+        </h1>
         {/* <Display data={data}/> */}
     </div>
   )
